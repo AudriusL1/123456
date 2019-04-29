@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Categories{% endblock %}
+
+{% block body %}
+<td><a href="/event">Events</a></td>
+<td><a href="/users">Users</a></td>
+<td><a href="/categories">Categories</a></td>
+<td><a href="/login">Logout</a></td><br>
+<td><a href="/categories/new" button class="btn">Create new</a></td>
+{% if categories %}
+    <table class ="table table-striped">
+    <thead>
+    <tr>
+      <th>Category</th>
+      <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+          {% for category in categories %}
+          <tr>
+          <td>{{ category.name }}</td>
+          <td><a href="/categories" button class="btn">Edit</a></td>
+          <td><a href="/categories" button class="btn">Delete</a></td>
+          </tr>
+          {% endfor %}
+      </tbody>
+      </table>
+{% else %}
+    <p>No Categories</p>
+{% endif %}
+{% endblock %}

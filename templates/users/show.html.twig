@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All users{% endblock %}
+
+{% block body %}
+
+<h1>{{ users.email }}</h1>
+<p>{{ users.id }}</p>
+<td><a href="/users">Go Back</a></td>
+{% endblock %}

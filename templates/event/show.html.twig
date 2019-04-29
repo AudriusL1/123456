@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+
+<h1>{{ events.name }}</h1>
+<p>{{ events.date }}</p>
+<p>{{ events.description }}</p>
+<td><a href="/event">Go Back</a></td>
+{% endblock %}
