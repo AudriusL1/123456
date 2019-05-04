@@ -10,7 +10,6 @@
 </style>
 
 <div class="example-wrapper">
-
     <h1>Hello Login page! ✅</h1>
 {% if error %}
     <span class="error">{{ error.messageKey }}</span>
@@ -18,8 +17,8 @@
    <form action="{{ path('login') }}" method="POST">
        <input Type="text" name="_username" value="{{ last_username }}" placeholder="Username here ...">
        <input Type="password" name="_password" >
-       <button type="submit">Login</button>
-
+       <button type="submit">Login</button><br>
+       <button class="btn"><a href="{{ '/menu' }}">Go back</button>
 
    </form>
 

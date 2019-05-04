@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All users{% endblock %}
+
+{% block body %}
+<td><a href="/event">Events</a></td>
+<td><a href="/users">Users</a></td>
+<td><a href="/categories">Categories</a></td>
+<a href="{{path('logout')}}">Logout</a>
+{% if users %}
+    <table id="user" class ="table table-striped">
+    <thead>
+    <tr>
+      <th>User email</th>
+      <th>Actions</th>
+      <th></th>
+      <th></th>
+      </tr>
+      </thead>
+      <tbody>
+          {% for user in users %}
+          <tr>
+          <td>{{ user.email }}</td>
+          <td><a href="/users/{{user.id}}" button class="btn">Show</a></td>
+          <td><a href="#" button class="btn del" data-id="{{ user.id }}">Delete</a></td>
+          </tr>
+          {% endfor %}
+      </tbody>
+      </table>
+{% else %}
+    <p>No users</p>
+{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+<script src="/js/main5.js"></script>
+{% endblock %}
