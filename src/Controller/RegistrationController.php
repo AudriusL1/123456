@@ -31,6 +31,7 @@ class RegistrationController extends AbstractController
             );
 
             $entityManager = $this->getDoctrine()->getManager();
+            $user->setRole(0);
             $entityManager->persist($user);
             $entityManager->flush();
 
@@ -42,5 +43,12 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
+    }
+    /**
+     * @Route("/home", name="home")
+     */
+    public function doing()
+    {
+
     }
 }
