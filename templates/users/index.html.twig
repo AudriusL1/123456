@@ -11,16 +11,14 @@
     <table id="user" class ="table table-striped">
     <thead>
     <tr>
-      <th>User email</th>
+      <th>User Name</th>
       <th>Actions</th>
-      <th></th>
-      <th></th>
       </tr>
       </thead>
       <tbody>
           {% for user in users %}
           <tr>
-          <td>{{ user.email }}</td>
+          <td>{{ user.username }}</td>
           <td><a href="/users/{{user.id}}" button class="btn">Show</a></td>
           <td><a href="#" button class="btn del" data-id="{{ user.id }}">Delete</a></td>
           </tr>

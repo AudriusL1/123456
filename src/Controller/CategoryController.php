@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class CategoryController extends AbstractController
 {
@@ -58,5 +59,55 @@ class CategoryController extends AbstractController
        ));
 
      }
+
+     /**
+      * @Route("/categories/edit/{id}", name="editcat")
+      * Method({"GET", "POST"})
+      */
+      public function edit(Request $request, $id) {
+        $category = new category();
+        $category = $this->getDoctrine()->getRepository
+        (category::class)->find($id);
+        $form = $this->createFormBuilder($category)
+        ->add('name', TextType::class, array('attr' =>
+        array('class' => 'form-control')))
+        ->add('save', SubmitType::class, array(
+          'label' => 'Update',
+          'attr' => array('class' => 'btn')))
+        ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+          $entityManager = $this->getDoctrine()->getManager();
+          $entityManager->flush();
+
+          return $this->redirectToRoute('category');
+        }
+
+        return $this->render('/category/edit.html.twig', array(
+          'form' => $form->createView()
+        ));
+
+      }
+
+      /**
+       * @Route("/categories/delete/{id}", name="del3")
+       * @Method({"DELETE"})
+       */
+      public function delete(Request $request, $id){
+        $category= $this->getDoctrine()->getRepository
+        (category::class)->find($id);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($category);
+        $entityManager->flush();
+
+        $response = new Response();
+        $response->send();
+      }
+
+
 
 }

@@ -5,7 +5,13 @@
 {% block body %}
 
 <h1>{{ events.name }}</h1>
-<p>{{ events.date }}</p>
+<p>{{ events.date|date('Y-m-d') }}</p>
+<p>Place: {{ events.location }}</p>
 <p>{{ events.description }}</p>
+{% if events.price == 0 %}
+  <p>Event is free!</p>
+{% else %}
+  <p>Price: {{ events.price }} €</p>
+{% endif %}
 <td><a href="/event">Go Back</a></td>
 {% endblock %}

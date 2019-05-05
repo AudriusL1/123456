@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use App\Entity\Event;
@@ -12,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class EventController extends AbstractController
 {
@@ -40,6 +40,10 @@ class EventController extends AbstractController
        ->add('description', TextType::class, array('attr' =>
        array('class' => 'form-control')))
        ->add('date', DateType::class, array('attr' =>
+       array('class' => 'form-control')))
+       ->add('location', TextType::class, array('attr' =>
+       array('class' => 'form-control')))
+       ->add('price', TextType::class, array('attr' =>
        array('class' => 'form-control')))
        ->add('save', SubmitType::class, array(
          'label' => 'Create',
@@ -79,6 +83,10 @@ class EventController extends AbstractController
         array('class' => 'form-control')))
         ->add('date', DateType::class, array('attr' =>
         array('class' => 'form-control')))
+        ->add('location', TextType::class, array('attr' =>
+        array('class' => 'form-control')))
+        ->add('price', TextType::class, array('attr' =>
+        array('class' => 'form-control')))
         ->add('save', SubmitType::class, array(
           'label' => 'Update',
           'attr' => array('class' => 'btn')))
@@ -110,6 +118,22 @@ class EventController extends AbstractController
 
          return $this->render('event/show.html.twig', array
          ('events' => $events));
+     }
+
+     /**
+      * @Route("/event/delete/{id}", name="del2")
+      * @Method({"DELETE"})
+      */
+     public function delete(Request $request, $id){
+       $events= $this->getDoctrine()->getRepository
+       (Event::class)->find($id);
+
+       $entityManager = $this->getDoctrine()->getManager();
+       $entityManager->remove($events);
+       $entityManager->flush();
+
+       $response = new Response();
+       $response->send();
      }
 
 }
