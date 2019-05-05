@@ -1,10 +1,14 @@
 body {
-    position: relative;
+    margin: 0;
+    padding: 0;
+   /* cursor: url("../images/cursor.png"),pointer;**/
+}
+/*
+position: relative;
     background: #ebebe0;
     min-height: 45rem;
     padding-bottom: 0px;
-}
-
+ */
 html {height:100%}
 
 /* NAVIGATION */
