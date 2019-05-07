@@ -1,16 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}KTU events Sign Up{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+        <link rel="stylesheet" href="{{ asset('front-end/css/register.css') }}">
+        <div class="wrap">
+            <h2>Sign Up Form</h2>
+            <form>
+                {{ form_start(registrationForm) }}
+                <div class="textBox">
+                    {{ form_widget(registrationForm.username,{'attr' : {'class' :'labelStyles','placeholder': 'username' } })}}
+                  </div>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-    {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
+                <div class="textBox">
+                    {{ form_widget(registrationForm.email,{'attr' : {'class' :'labelStyles','placeholder': 'email' } })}}
+                </div>
+                <div class="textBox">
+                    {{ form_widget(registrationForm.plainPassword,{'attr' : {'class' :'labelStyles','placeholder': 'password' } })}}
+                </div>
 
-        <button class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-  <button class="btn"><a href="{{ '/menu' }}">Go back</button>
+                <button class="btn">Register</button>
+                <button class="btn"><a href="{{ '/menu' }}">Go back</button>
+                {{ form_end(registrationForm) }}
+            </form>
+        </div>
+
+
 {% endblock %}
