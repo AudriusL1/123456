@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{ asset('front-end/css/register.css') }}">
         <div class="wrap">
             <h2>Sign Up Form</h2>
-            <form>
+
                 {{ form_start(registrationForm) }}
                 <div class="textBox">
                     {{ form_widget(registrationForm.username,{'attr' : {'class' :'labelStyles','placeholder': 'username' } })}}
@@ -16,14 +16,14 @@
                     {{ form_widget(registrationForm.email,{'attr' : {'class' :'labelStyles','placeholder': 'email' } })}}
                 </div>
                 <div class="textBox">
-                    {{ form_widget(registrationForm.plainPassword,{'attr' : {'class' :'labelStyles','placeholder': 'password' } })}}
+                    {{ form_widget(registrationForm.plainPassword.first,{'attr' : {'class' :'labelStyles','placeholder': 'password' } })}}
                 </div>
+            <div class="textBox2">
+                {{ form_widget(registrationForm.plainPassword.second,{'attr' : {'class' :'labelStyles','placeholder': 'repeat password' } })}}
+            </div>
 
                 <button class="btn">Register</button>
-                <button class="btn"><a href="{{ '/menu' }}">Go back</button>
                 {{ form_end(registrationForm) }}
-            </form>
+                <button class="btn"><a href="{{ '/menu' }}">Go back</button>
         </div>
-
-
 {% endblock %}
