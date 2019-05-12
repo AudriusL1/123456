@@ -2,21 +2,41 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}menu{% endblock %}
+{% block titleBar %}
+    <nav class="navbarhead-bg">
 
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark navbarhead-bg mb-5">
+        <img src="{{ asset('front-end/images/ktu-logo-lt-pilnas.png') }}" class ="imgKTU">
+        <div class="headTitleText">ACADEMIC EVENTS SYSTEM</div>
+    </nav>
+{% endblock %}
 {% block menuStyleSheet %}
 
 
 {% endblock %}
 {% block meniuBar %}
     <link rel="stylesheet" href="{{ asset('front-end/css/menu.css') }}">
-    <b class="logoQuote">We are all joined in a circle of stories</b>
-    <b class="logoQuote1">Find your own story</b>
+
+
+<div class="alignMenu">
+   <br> FOR KTU STUDENTS AND EMPLOYESS
+    <br>
+                 <br >Signing up for KTU members</br>
+
+    <br>
+                 <button class="signupButton"><a href="{{ '/register' }}">Sign up</a></button>
+    <br>
+        <br>Loging in for KTU members</br>
+    <br>
+
+        <button class="loginButton"><a href="{{ '/login' }}">Log in</a></button>
+</div>
+
 
 {% endblock %}
 
 
 {% block body %}
 
-    <button class="signupButton"><a href="{{ '/register' }}">Sign up</button><br>
-    <button class="loginButton"><a href="{{ '/login' }}">Log in</button>
 {% endblock %}

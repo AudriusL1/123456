@@ -1,35 +1,38 @@
-.body{
-font-family: "Times New Roman";
+body{
+
     margin: 0;
     padding: 0;
+    background: #e6ffe6;
 }
 .wrap{
     max-width: 300px;
+    max-height: 600px;
     border-radius: 20px;
-    margin: auto;
-    margin-top: 40%;
-    background: rgba(0,0,0,8);
+    background: #006666;
+    background-size: 100% 100%;
     box-sizing: border-box;
     padding: 40px;
     color: #fff;
-    margin-top: 100px;
-
+    margin-left: 600px;
+    margin-top: 10px;
 }
 h2{
     text-align: center;
 }
 .textBox{
+
     width: 100%;
     box-sizing: border-box;
     padding: 12px 5px;
-    background: rgba(0,0,0,10);
+    background: rgba(50, 50, 26,0);
     outline: none;
     border: none;
     border-bottom: 1px dotted #fff;
     color: #fff;
     border-radius: 5px;
-    margin: 5px;
+
     font-weight: bold;
+
 }
 .labelStyles{
     width: 100%;
@@ -51,13 +54,13 @@ h2{
     margin-top: 30px;
     outline: none;
     border: none;
-    background: #60adde;
+    background: #ffffb3;
     opacity: 0.7;
     border-radius: 20px;
     font-size: 20px;
     color: #fff;
 }
 .btn:hover{
-    background: #003366;
+    background: #ffffb3;
     opacity: 0.7;
 }

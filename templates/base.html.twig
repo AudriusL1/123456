@@ -9,15 +9,20 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('front-end/css/font-awesome.css') }}">
         <link rel="stylesheet" href="{{ asset('front-end/css/styles.css') }}">
+
     {% endblock %}
 </head>
 <body>
-<nav class="navbarhead-bg">
-</nav>
-<nav class="navbar navbar-expand-lg navbar-dark navbarhead-bg mb-5">
-    <b class="headTitleText">▪ KTU events ▪ Lets create future together ▪</b>
-</nav>
-<img src="{{ asset('front-end/images/ktu-logo-lt-pilnas.png') }}" class ="imgKTU">
+{% block titleBar %}
+    <nav class="navbarhead-bg">
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark navbarhead-bg mb-5">
+        <img src="{{ asset('front-end/images/ktu-logo-lt-pilnas.png') }}" class ="imgKTU">
+        <div class="headTitleText">ACADEMIC EVENTS SYSTEM</div>
+    </nav>
+{% endblock %}
+
+
 {% block meniuBar %}
 {% endblock %}
 

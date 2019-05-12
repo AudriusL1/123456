@@ -1,0 +1,145 @@
+body{
+    position: absolute;
+    background: #e6ffe6;
+    margin: 0;
+    padding: 0;
+
+}
+.wrap{
+
+    position: absolute;
+    top:100px;
+    margin-left: 300px;
+    width: 1000px;
+    height: 600px;
+    text-align:center;
+    background: #ffffff;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding: 0px;
+
+    color: #fff;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    align-content: center;
+
+
+}
+h2{
+    position: absolute;
+    font-size: 26px;
+    margin-left: 30px;
+    text-align: center;
+    color: black;
+}
+.titleHead{
+
+}
+.textBox{
+
+    width: 10%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    background: rgba(50, 50, 26,0);
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted #fff;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
+.labelStyles{
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    background: rgba(0,0,0,0.10);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}
+.labelStylesPosition{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 150px;
+    align-content:center;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+}
+.labelStylesPositionOne{
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 150px;
+    align-content:center;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+}
+h3{
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 30px;
+    align-content:center;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    color: black;
+    font-size: 18px;
+}
+h4{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 30px;
+    align-content:center;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    color: black;
+    font-size: 18px;
+}
+.btnOne{
+    position: absolute;
+    width: 10%;
+    height: 5%;
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 300px;
+    margin-left: -400px;
+    outline: none;
+    border: none;
+    background: #006666;
+    opacity: 0.7;
+    border-radius: 5px;
+}
+.btnTwo{
+    position: absolute;
+    width: 10%;
+    height: 6%;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 280px;
+    margin-left: -150px;
+    outline: none;
+    border: none;
+    background: #006666;
+    opacity: 0.7;
+    border-radius: 5px;
+    font-size: 15px;
+    color: black;
+}
+.btn:hover{
+    background: black;
+    opacity: 0.7;
+}
+a:visited{
+    color: white;
+}

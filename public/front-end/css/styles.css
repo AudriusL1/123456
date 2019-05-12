@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin-left: 0px;
+    margin-right: 0px;
    /* cursor: url("../images/cursor.png"),pointer;**/
 }
 /*
@@ -14,12 +14,12 @@ html {height:100%}
 /* NAVIGATION */
 
 .navbar-bg {
-    background: url('../images/nav.jpg');
+    background: #006666;
     background-size: 100%;
 
 }
 .navbarhead-bg {
-    background: url('../images/headtitle.jpg');
+    background: #006666;
     background-size: 100%;
 }
 
@@ -251,20 +251,26 @@ html {height:100%}
     font-size: 30px;
 }
 .imgKTU {
-    padding: 5px;
-    width: 180px;
     position: relative;
-    top: -30px;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 13%;
+    height: auto;
+    background-size: 100% 100%;
+    background-position: center;
 }
 .headImage {
 
     background-size: 100%;
 }
 .headTitleText{
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Comic Sans MS;
-    font-size: 14px;
-    font-weight: normal;
-    color:white;
+    position: absolute;
+    margin-left: 15%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 120%;
+    height: auto;
+    font-weight: 400;
+    color: white;
 }

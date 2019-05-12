@@ -5,12 +5,11 @@
 {% block body %}
         <link rel="stylesheet" href="{{ asset('front-end/css/register.css') }}">
         <div class="wrap">
-            <h2>Sign Up Form</h2>
-            <form>
+            <h2>Enter your username and password</h2>
                 {{ form_start(registrationForm) }}
                 <div class="textBox">
                     {{ form_widget(registrationForm.username,{'attr' : {'class' :'labelStyles','placeholder': 'username' } })}}
-                  </div>
+                </div>
 
                 <div class="textBox">
                     {{ form_widget(registrationForm.email,{'attr' : {'class' :'labelStyles','placeholder': 'email' } })}}
@@ -20,10 +19,7 @@
                 </div>
 
                 <button class="btn">Register</button>
-                <button class="btn"><a href="{{ '/menu' }}">Go back</button>
+                <button class="btn"><a href="{{ '/menu' }}">Go back</a></button>
                 {{ form_end(registrationForm) }}
-            </form>
         </div>
-
-
 {% endblock %}

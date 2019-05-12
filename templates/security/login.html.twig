@@ -1,26 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello!{% endblock %}
-
+{% block titleBar %}
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    .error {color:red}
-</style>
-
-<div class="example-wrapper">
-    <h1>Welcome! ✅</h1>
+    <link rel="stylesheet" href="{{ asset('front-end/css/login.css') }}">
+    <div class="example-wrapper">
 {% if error %}
     <span class="error">{{ error.messageKey }}</span>
     {% endif %}
+    <div class="wrap">
+        <nav class="titleHead">
+             <nav class="navbarhead-bg">
+                 </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark navbarhead-bg mb-5">
+                <img src="{{ asset('front-end/images/ktu-logo-lt-pilnas.png') }}" class ="imgKTU">
+                </nav>
+         </nav>
+        <h2>Enter your username and password</h2>
    <form action="{{ path('login') }}" method="POST">
-       <input Type="text" name="_username" value="{{ last_username }}" placeholder="Username here ...">
-       <input Type="password" name="_password" >
-       <button type="submit">Login</button><br>
-       <button class="btn"><a href="{{ '/menu' }}">Go back</button>
+       <div class="textBox">
+           <h3>Username</h3>
+           <div class="labelStylesPosition">
+            <input Type="text" class="labelStyles" name="_username" value="{{ last_username }}" placeholder="Write here ...">
+       </div>
+       </div>
+       <div class="textBox">
+           <h4>Password</h4>
+           <div class="labelStylesPositionOne">
+            <input Type="password" class="labelStyles" name="_password" placeholder="Write here ...">
+           </div>
+       </div>
+
+       <button type="submit" class="btnOne">Login</button><br>
+       <button class="btnTwo"><a href="{{ '/menu' }}">Go back</a></button>
 
    </form>
-
+</div>
 </div>
 {% endblock %}
+
+
+
