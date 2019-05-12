@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 class EventController extends AbstractController
 {
     /**
@@ -45,6 +45,9 @@ class EventController extends AbstractController
        array('class' => 'form-control')))
        ->add('price', TextType::class, array('attr' =>
        array('class' => 'form-control')))
+       ->add('category', EntityType::class, [
+         'class' => 'App\Entity\Category',
+       ])
        ->add('save', SubmitType::class, array(
          'label' => 'Create',
          'attr' => array('class' => 'btn')))
@@ -87,6 +90,9 @@ class EventController extends AbstractController
         array('class' => 'form-control')))
         ->add('price', TextType::class, array('attr' =>
         array('class' => 'form-control')))
+        ->add('category', EntityType::class, [
+          'class' => 'App\Entity\Category',
+        ])
         ->add('save', SubmitType::class, array(
           'label' => 'Update',
           'attr' => array('class' => 'btn')))

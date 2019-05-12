@@ -13,6 +13,7 @@
     <thead>
     <tr>
       <th>Event Title</th>
+      <th>Event Category</th>
       <th>Event Date</th>
       <th>Event Price</th>
       <th>Actions</th>
@@ -22,6 +23,7 @@
           {% for event in events %}
           <tr>
           <td>{{ event.name }}</td>
+          <td>{{ event.category }}</td>
           <td>{{ event.date|date('Y-m-d') }}</td>
           {% if event.price == 0 %}
           <td>Free!</td>
