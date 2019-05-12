@@ -34,6 +34,19 @@ h2{
     font-weight: bold;
 
 }
+.textBox2{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    background: rgba(0,0,0,10);
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted #fff;
+    color: #fff;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
 .labelStyles{
     width: 100%;
     box-sizing: border-box;

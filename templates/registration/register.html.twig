@@ -15,10 +15,14 @@
                     {{ form_widget(registrationForm.email,{'attr' : {'class' :'labelStyles','placeholder': 'email' } })}}
                 </div>
                 <div class="textBox">
-                    {{ form_widget(registrationForm.plainPassword,{'attr' : {'class' :'labelStyles','placeholder': 'password' } })}}
+                    {{ form_widget(registrationForm.plainPassword.first,{'attr' : {'class' :'labelStyles','placeholder': 'password' } })}}
                 </div>
+            <div class="textBox2">
+                {{ form_widget(registrationForm.plainPassword.second,{'attr' : {'class' :'labelStyles','placeholder': 'repeat password' } })}}
+            </div>
 
                 <button class="btn">Register</button>
+
                 <button class="btn"><a href="{{ '/menu' }}">Go back</a></button>
                 {{ form_end(registrationForm) }}
         </div>

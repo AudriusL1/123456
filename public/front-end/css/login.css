@@ -8,28 +8,26 @@ body{
 .wrap{
 
     position: absolute;
-    top:100px;
+    top: 30px;
     margin-left: 300px;
-    width: 1000px;
-    height: 600px;
+    width: 800px;
+    height: 500px;
     text-align:center;
     background: #ffffff;
     background-size: 100% 100%;
     box-sizing: border-box;
     padding: 0px;
-
     color: #fff;
     display: block;
     flex-direction:column ;
     justify-content: center;
     align-content: center;
-
-
 }
 h2{
     position: absolute;
-    font-size: 26px;
+    font-size: 20px;
     margin-left: 30px;
+    margin-top: 30px;
     text-align: center;
     color: black;
 }
@@ -40,10 +38,10 @@ h2{
 
     width: 10%;
     box-sizing: border-box;
-    padding: 12px 5px;
+    padding: 10px 5px;
     background: rgba(50, 50, 26,0);
     outline: none;
-    border: none;
+    border: black;
     border-bottom: 1px dotted #fff;
     color: #fff;
     border-radius: 5px;
@@ -53,8 +51,9 @@ h2{
 .labelStyles{
 
     width: 100%;
+    height: 40px;
     box-sizing: border-box;
-    padding: 12px 5px;
+    padding: 10px 5px;
     background: rgba(0,0,0,0.10);
     outline: none;
     border: none;
@@ -90,7 +89,7 @@ h3{
     flex-direction:column ;
     justify-content: center;
     color: black;
-    font-size: 18px;
+    font-size: 14px;
 }
 h4{
     position: absolute;
@@ -101,19 +100,18 @@ h4{
     flex-direction:column ;
     justify-content: center;
     color: black;
-    font-size: 18px;
+    font-size: 14px;
 }
 .btnOne{
     position: absolute;
     width: 10%;
-    height: 5%;
+    height: 6%;
     font-size: 15px;
     color: black;
     text-align: center;
     box-sizing: border-box;
-    padding: 20px;
-    margin-top: 300px;
-    margin-left: -400px;
+    margin-top: 230px;
+    margin-left: -350px;
     outline: none;
     border: none;
     background: #006666;
@@ -124,10 +122,8 @@ h4{
     position: absolute;
     width: 10%;
     height: 6%;
-    box-sizing: border-box;
-    padding: 20px;
-    margin-top: 280px;
-    margin-left: -150px;
+    margin-top: 205px;
+    margin-left: -200px;
     outline: none;
     border: none;
     background: #006666;
