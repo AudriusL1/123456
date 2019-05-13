@@ -4,11 +4,10 @@
 
 {% block body %}
 <td><a href="/event">Events</a></td>
-<td><a href="/users">Users</a></td>
+<td><a href="/event">Events For Me</a></td>
 <td><a href="/categories">Categories</a></td>
 <td><a href="/profile">Profile</a></td>
 <a href="{{path('logout')}}">Logout</a><br>
-<td><a href="/categories/new" button class="btn">Create new</a></td>
 {% if categories %}
     <table id="category" class ="table table-striped">
     <thead>
@@ -21,8 +20,7 @@
           {% for category in categories %}
           <tr>
           <td>{{ category.name }}</td>
-          <td><a href="/categories/edit/{{category.id}}" button class="btn">Edit</a></td>
-          <td><a href="#" button class="btn del" data-id="{{ category.id }}">Delete</a></td>
+          <td><a href="/categories" button class="btn">Subscribe</a></td>
           </tr>
           {% endfor %}
       </tbody>
@@ -30,8 +28,4 @@
 {% else %}
     <p>No Categories</p>
 {% endif %}
-{% endblock %}
-
-{% block javascripts %}
-<script src="/js/maincat.js"></script>
 {% endblock %}

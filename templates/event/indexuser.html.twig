@@ -4,11 +4,10 @@
 
 {% block body %}
 <td><a href="/event">Events</a></td>
-<td><a href="/users">Users</a></td>
+<td><a href="/event">Events For Me</a></td>
 <td><a href="/categories">Categories</a></td>
 <td><a href="/profile">Profile</a></td>
 <td><a href="{{path('logout')}}">Logout</a></td><br>
-<td><a href="/event/new" button class="btn">Create new</a></td>
 {% if events %}
     <table id="event" class ="table table-striped">
     <thead>
@@ -32,8 +31,6 @@
             <td>{{ event.price }} €</td>
           {% endif %}
           <td><a href="/event/{{event.id}}" button class="btn">Show</a></td>
-          <td><a href="/event/edit/{{event.id}}" button class="btn">Edit</a></td>
-          <td><a href="#" button class="btn del" data-id="{{ event.id }}">Delete</a></td>
           </tr>
           {% endfor %}
       </tbody>
@@ -41,8 +38,4 @@
 {% else %}
     <p>No events</p>
 {% endif %}
-{% endblock %}
-
-{% block javascripts %}
-<script src="/js/maineve.js"></script>
 {% endblock %}
