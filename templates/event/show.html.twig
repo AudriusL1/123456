@@ -6,6 +6,7 @@
 
 <h1>{{ events.name }}</h1>
 <p>{{ events.date|date('Y-m-d') }}</p>
+<p>{{ events.category }}</p>
 <p>Place: {{ events.location }}</p>
 <p>{{ events.description }}</p>
 {% if events.price == 0 %}

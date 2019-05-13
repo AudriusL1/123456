@@ -24,7 +24,14 @@ class CategoryController extends AbstractController
       $categories= $this->getDoctrine()->getRepository
       (Category::class)->findAll();
 
+      $role = $this->get('security.token_storage')
+      ->getToken()->getUser()->getRole();
+      if($role == 1)
+      {
         return $this->render('category/index.html.twig', array
+        ('categories' => $categories));
+      }
+        return $this->render('category/indexuser.html.twig', array
         ('categories' => $categories));
     }
 
