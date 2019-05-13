@@ -22,7 +22,9 @@ body{
     flex-direction:column ;
     justify-content: center;
     align-content: center;
+    border: 1px solid darkslategray;
 }
+
 h2{
     position: absolute;
     font-size: 20px;
@@ -107,7 +109,7 @@ h4{
     width: 10%;
     height: 6%;
     font-size: 15px;
-    color: black;
+    color: white;
     text-align: center;
     box-sizing: border-box;
     margin-top: 230px;
@@ -130,7 +132,7 @@ h4{
     opacity: 0.7;
     border-radius: 5px;
     font-size: 15px;
-    color: black;
+    color: white;
 }
 .btn:hover{
     background: black;
@@ -138,4 +140,11 @@ h4{
 }
 a:visited{
     color: white;
+    text-decoration:none;
+    text-decoration-line: none;
+}
+a:link{
+    color: white;
+    text-decoration:none;
+    text-decoration-line: none;
 }
