@@ -68,6 +68,28 @@ class CategoryController extends AbstractController
      }
 
      /**
+      * @Route("/categories/sub/{id}", name="subscribe")
+      * Method({"GET", "POST"})
+      */
+      public function subscribe($id) {
+        $sub = new category();
+        $sub = $this->getDoctrine()->getRepository
+        (category::class)->find($id);
+        $user = $this->get('security.token_storage')
+        ->getToken()->getUser();
+
+          $sub->addSub($user);
+
+          $entityManager = $this->getDoctrine()->getManager();
+          $entityManager->persist($sub);
+          $entityManager->flush();
+
+          return $this->redirectToRoute('category');
+        }
+
+        //return $this->render('/category/indexuser.html.twig');
+
+     /**
       * @Route("/categories/edit/{id}", name="editcat")
       * Method({"GET", "POST"})
       */

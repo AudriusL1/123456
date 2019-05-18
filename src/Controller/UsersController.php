@@ -38,6 +38,27 @@ class UsersController extends AbstractController
     }
 
     /**
+     * @Route("/users/rolechange/{id}", name="rolechange")
+     */
+     public function change($id) {
+
+       $user= $this->getDoctrine()->getRepository
+       (User::class)->find($id);
+       if($user->getRole() == 0){
+       $user->setRole(1);
+       }
+       elseif ($user->getRole() == 1) {
+         $user->setRole(0);
+       }
+
+         $entityManager = $this->getDoctrine()->getManager();
+         $entityManager->persist($user);
+         $entityManager->flush();
+
+         return $this->redirectToRoute('users');
+       }
+
+    /**
      * @Route("/users/delete/{id}", name="del")
      * @Method({"DELETE"})
      */
