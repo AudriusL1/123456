@@ -1,48 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}All events{% endblock %}
-
+{% block eventBlockTitleUser %}{% endblock %}
+{% block titleBar %}{% endblock %}
 {% block body %}
-<td><a href="/event">Events</a></td>
-<td><a href="/users">Users</a></td>
-<td><a href="/categories">Categories</a></td>
-<td><a href="/profile">Profile</a></td>
-<td><a href="{{path('logout')}}">Logout</a></td><br>
-<td><a href="/event/new" button class="btn">Create new</a></td>
 {% if events %}
     <table id="event" class ="table table-striped">
-    <thead>
-    <tr>
-      <th>Event Title</th>
-      <th>Event Category</th>
-      <th>Event Date</th>
-      <th>Event Price</th>
-      <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-          {% for event in events %}
-          <tr>
-          <td>{{ event.name }}</td>
-          <td>{{ event.category }}</td>
-          <td>{{ event.date|date('Y-m-d') }}</td>
-          {% if event.price == 0 %}
-          <td>Free!</td>
-          {% else %}
-            <td>{{ event.price }} €</td>
-          {% endif %}
-          <td><a href="/event/{{event.id}}" button class="btn">Show</a></td>
-          <td><a href="/event/edit/{{event.id}}" button class="btn">Edit</a></td>
-          <td><a href="#" button class="btn del" data-id="{{ event.id }}">Delete</a></td>
-          </tr>
-          {% endfor %}
-      </tbody>
-      </table>
+        <thead>
+        <tr>
+            <th>Event Title</th>
+            <th>Event Category</th>
+            <th>Event Date</th>
+            <th>Event Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.name }}</td>
+                <td>{{ event.category }}</td>
+                <td>{{ event.date|date('Y-m-d') }}</td>
+                {% if event.price == 0 %}
+                    <td>Free!</td>
+                {% else %}
+                    <td>{{ event.price }} €</td>
+                {% endif %}
+                <td><a href="/event/{{event.id}}" button class="btn">Show</a></td>
+                <td><a href="/event/edit/{{event.id}}" button class="btn">Edit</a></td>
+                <td><a href="#" button class="btn del" data-id="{{ event.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
 {% else %}
-    <p>No events</p>
+
 {% endif %}
 {% endblock %}
-
 {% block javascripts %}
 <script src="/js/maineve.js"></script>
 {% endblock %}

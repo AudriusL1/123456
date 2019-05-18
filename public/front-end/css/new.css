@@ -1,0 +1,31 @@
+body{
+
+}
+.align{
+    position: absolute;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+
+}
+.btn{
+    background-color: #006666; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 15px;
+}
+a.classNew1:visited{
+    color: white;
+}
+a.classNew1:link{
+color: white;
+}

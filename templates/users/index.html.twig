@@ -1,19 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}All users{% endblock %}
-
+{% block titleBar %}{% endblock %}
+{% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
-<td><a href="/event">Events</a></td>
-<td><a href="/users">Users</a></td>
-<td><a href="/categories">Categories</a></td>
-<td><a href="/profile">Profile</a></td>
-<a href="{{path('logout')}}">Logout</a>
 {% if users %}
-    <table id="user" class ="table table-striped">
-    <thead>
+    <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+<div class="align">
+    <table id="user" class ="table table-hover ">
+    <thead class="thead-dark">
     <tr>
       <th>User Name</th>
-      <th>Actions</th>
+      <th>Inspect</th>
+        <th>Remove</th>
       </tr>
       </thead>
       <tbody>
@@ -26,6 +25,7 @@
           {% endfor %}
       </tbody>
       </table>
+</div>
 {% else %}
     <p>No users</p>
 {% endif %}

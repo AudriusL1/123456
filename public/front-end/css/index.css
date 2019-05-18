@@ -1,0 +1,35 @@
+body{
+
+    margin: 0;
+    padding: 0;
+}
+
+.titleLinks{
+    word-spacing: 20px;
+}
+.align{
+    position: absolute;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    align-content: center;
+    margin-top: 40px;
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 200px;
+    width: 900px;
+    background: white;
+}
+.alignProfile{
+    position: absolute;
+    left:100px;
+}
+a:visited{
+    color:black;
+}
+a:link{
+    color: black;
+}
+a:hover{
+    color:black;
+}

@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}All Categories{% endblock %}
-
+{% block titleBar %}{% endblock %}
+{% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
-<td><a href="/event">Events</a></td>
-<td><a href="/users">Users</a></td>
-<td><a href="/categories">Categories</a></td>
-<td><a href="/profile">Profile</a></td>
-<a href="{{path('logout')}}">Logout</a><br>
+
 <td><a href="/categories/new" button class="btn">Create new</a></td>
+
 {% if categories %}
+    <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
     <table id="category" class ="table table-striped">
     <thead>
     <tr>

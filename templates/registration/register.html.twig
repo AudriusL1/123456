@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}KTU events Sign Up{% endblock %}
-
+{% block eventBlockTitleAdmin %}{% endblock %}
+{% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
         <link rel="stylesheet" href="{{ asset('front-end/css/register.css') }}">
     <p>
         <div class="wrap">
-
             <h2>Sign up to the academic event system </h2>
                 {{ form_start(registrationForm) }}
                 <div class="textBox">

@@ -1,0 +1,9 @@
+a.class1:visited{
+    color:whitesmoke;
+}
+a.class1:link{
+    color: white;
+}
+a.class1:hover{
+    color:darkgrey;
+}

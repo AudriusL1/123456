@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}New event{% endblock %}
-
+{% block titleBar %}{% endblock %}
+{% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
 
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
+    <link rel="stylesheet" href="{{ asset('front-end/css/new.css') }}">
 
-<a href="/event">Go Back</a>
+    <div class="align">
+        {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+<a class="btn classNew1" href="/event">Go Back</a>
+    </div>
 
 {% endblock %}

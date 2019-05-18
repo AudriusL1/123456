@@ -1,18 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Profile{% endblock %}
-
+{% block titleBar %}{% endblock %}
+{% block eventBlockTitleAdmin %}{% endblock %}
 {% block body %}
-<td><a href="/event">Events</a></td>
-<td><a href="/event">Events For Me</a></td>
-<td><a href="/categories">Categories</a></td>
-<td><a href="/profile">Profile</a></td>
-<a href="{{path('logout')}}">Logout</a>
-
+    <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+<div class="alignProfile">
 <h1>{{ user.username }}</h1>
 <p>Email: {{ user.email }}</p>
-{% if user.role == 1 %}
-<p>You have Admin role</p>
+{% if user.role == 0 %}
+<p>You have User role</p>
+    </div>
 {% endif %}
 
 {% endblock %}
