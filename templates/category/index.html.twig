@@ -5,15 +5,24 @@
 {% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
 
-<td><a href="/categories/new" button class="btn">Create new</a></td>
+
 
 {% if categories %}
     <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
-    <table id="category" class ="table table-striped">
-    <thead>
+    <div class="textCategory">
+        <p>Welcome to the Category section</p>
+    </div>
+<div class="textCategory1">
+    <p>If you would like to create new category, please press link
+    <a href="/categories/new" class="createNewCategory">Create!</a></p>
+</div>
+    <div class="align">
+    <table id="category" class ="table table-hover">
+    <thead class="thead-dark">
     <tr>
       <th>Category</th>
-      <th>Actions</th>
+      <th>Customize</th>
+        <th>Remove</th>
       </tr>
       </thead>
       <tbody>
@@ -26,6 +35,7 @@
           {% endfor %}
       </tbody>
       </table>
+    </div>
 {% else %}
     <p>No Categories</p>
 {% endif %}

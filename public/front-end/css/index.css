@@ -33,3 +33,22 @@ a:link{
 a:hover{
     color:black;
 }
+.textCategory{
+    margin-top: 0px;
+    margin-left: 550px;
+    font-size: 26px;
+}
+.textCategory1{
+
+    margin-left: 525px;
+    font-size: 16px;
+}
+a.createNewCategory:visited{
+color: #4da6ff;
+}
+a.createNewCategory:link{
+    color: #4da6ff;
+}
+a.createNewCategory:hover{
+    color: #204d74;
+}

@@ -17,7 +17,7 @@
           {% for category in categories %}
           <tr>
           <td>{{ category.name }}</td>
-          <td><a href="/categories" button class="btn">Subscribe</a></td>
+          <td><a href="/categories/sub/{{category.id}}" button class="btn">Subscribe</a></td>
           </tr>
           {% endfor %}
       </tbody>

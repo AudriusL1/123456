@@ -5,13 +5,17 @@
 {% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
 {% if users %}
+
     <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
-<div class="align">
+    <div class="align">
+
     <table id="user" class ="table table-hover ">
     <thead class="thead-dark">
     <tr>
       <th>User Name</th>
-      <th>Inspect</th>
+        <th>Role</th>
+        <th>Inspect</th>
+        <th>Permission</th>
         <th>Remove</th>
       </tr>
       </thead>
@@ -19,7 +23,13 @@
           {% for user in users %}
           <tr>
           <td>{{ user.username }}</td>
+          {% if user.role == 1 %}
+          <td>Admin</td>
+          {% else %}
+            <td>User</td>
+          {% endif %}
           <td><a href="/users/{{user.id}}" button class="btn">Show</a></td>
+          <td><a href="/users/rolechange/{{user.id}}" button class="btn">Change Role</a></td>
           <td><a href="#" button class="btn del" data-id="{{ user.id }}">Delete</a></td>
           </tr>
           {% endfor %}

@@ -4,11 +4,13 @@
 {% block titleBar %}{% endblock %}
 {% block eventBlockTitleUser %}{% endblock %}
 {% block body %}
-
+    <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-end/css/new.css') }}">
+<div class="align">
 {{ form_start(form) }}
 {{ form_widget(form) }}
 {{ form_end(form) }}
 
-<a href="/categories">Go Back</a>
-
+<a href="/categories" class="btn classNew1">Go Back</a>
+</div>
 {% endblock %}
