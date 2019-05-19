@@ -6,6 +6,14 @@
 {% block body %}
 
 {% if events %}
+    <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+    <div class="eventTitleAlign">
+        <p align="center">Welcome to your subscribed category section </p>
+    </div>
+    <div class="eventTitleAlign1">
+        <p align="center">Do not miss upcoming events</p>
+    </div>
+<div class="align1">
     <table id="event" class ="table table-striped">
     <thead>
     <tr>
@@ -36,6 +44,7 @@
           {% endfor %}
       </tbody>
       </table>
+</div>
 {% else %}
     <p>No events</p>
 {% endif %}

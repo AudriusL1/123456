@@ -6,6 +6,11 @@
 {% block body %}
 
 {% if categories %}
+<link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+<div class="eventTitleAlign">
+    <p align="center">Subscribe categories to see upcoming events </p>
+</div>
+<div class="align1">
     <table id="category" class ="table table-striped">
     <thead>
     <tr>
@@ -32,6 +37,7 @@
           {% endfor %}
       </tbody>
       </table>
+</div>
 {% else %}
     <p>No Categories</p>
 {% endif %}

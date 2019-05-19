@@ -20,6 +20,9 @@ body{
     width: 900px;
     background: white;
 }
+.space{
+    margin-left: 20px;
+}
 .align1{
     position: absolute;
     display: block;
