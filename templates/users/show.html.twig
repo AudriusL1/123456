@@ -5,16 +5,19 @@
 {% block eventBlockTitleAdmin %}{% endblock %}
 
 {% block body %}
-<table id="user">
+
+    <link rel="stylesheet" href="{{ asset('front-end/css/show.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-end/css/new.css') }}">
+<div class="align">
 <h1>{{ users.username }}</h1>
 <p>Email: {{ users.email }}</p>
 {% if users.role == 1 %}
 <p>{{ users.username }} is Admin</p>
 {% else %}
-<p>{{ users.username }} is just a user</p>
+<p>{{ users.username }} USER</p>
 {% endif %}
-<tr><td><a href="#" button class="btn del" data-id="{{ users.id }}">Delete this user</a></td></tr>
-<td><a href="/users">Go Back</a></td>
+<td><a class="btn classNew1" href="/users" >Go Back</a></td>
+</div>
 {% endblock %}
 
 {% block javascripts %}

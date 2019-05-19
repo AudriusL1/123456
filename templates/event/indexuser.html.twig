@@ -6,8 +6,17 @@
 {% block body %}
 
 {% if events %}
-    <table id="event" class ="table table-striped">
-    <thead>
+    <link rel="stylesheet" href="{{ asset('front-end/css/new.css') }}">
+    <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+    <div class="eventTitleAlign">
+        <p align="center">Hello <mark class="colorUser" >{{ user.username }}</mark> USER! </p>
+    </div>
+    <div class="eventTitleAlign1">
+        <p align="center">Enjoy surfing KTU events</p>
+    </div>
+    <div class="align">
+    <table id="event" class ="table table-hover">
+        <thead class="thead-dark">
     <tr>
       <th>Event Title</th>
       <th>Event Category</th>
@@ -27,12 +36,18 @@
           {% else %}
             <td>{{ event.price }} €</td>
           {% endif %}
-          <td><a href="/event/{{event.id}}" button class="btn">Show</a></td>
+          <td><a href="/event/{{event.id}}"button>Show</a></td>
           </tr>
           {% endfor %}
       </tbody>
       </table>
+    </div>
 {% else %}
-    <p>No events</p>
+    <div class="eventTitleAlign">
+        <p align="center">Hello <mark class="colorUser" >{{ user.username }}</mark> USER! </p>
+    </div>
+    <div class="eventTitleAlign1">
+        <p align="center">We are sorry, but there are not any upcoming events</p>
+    </div>
 {% endif %}
 {% endblock %}

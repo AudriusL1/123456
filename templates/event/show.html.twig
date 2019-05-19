@@ -4,7 +4,9 @@
 {% block titleBar %}{% endblock %}
 {% block eventBlockTitleAdmin %}{% endblock %}
 {% block body %}
-
+  <link rel="stylesheet" href="{{ asset('front-end/css/show.css') }}">
+  <link rel="stylesheet" href="{{ asset('front-end/css/new.css') }}">
+<div class="align">
 <h1>{{ events.name }}</h1>
 <p>{{ events.date|date('Y-m-d') }}</p>
 <p>{{ events.category }}</p>
@@ -15,5 +17,6 @@
 {% else %}
   <p>Price: {{ events.price }} €</p>
 {% endif %}
-<td><a href="/event">Go Back</a></td>
+  <td><a class="btn classNew1" href="/event" >Go Back</a></td>
+</div>
 {% endblock %}

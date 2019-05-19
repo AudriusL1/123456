@@ -1,0 +1,14 @@
+body{
+
+}
+.align{
+    position: absolute;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+
+}

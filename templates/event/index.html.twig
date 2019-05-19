@@ -7,10 +7,10 @@
 {% if events %}
 <link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
     <div class="eventTitleAlign">
-        <p>Hello <mark class="colorUser" >{{ user.username }}</mark> ADMIN! </p>
+        <p align="center">Hello <mark class="colorUser" >{{ user.username }}</mark> ADMIN! </p>
     </div>
     <div class="eventTitleAlign1">
-        <p>Enjoy customizing KTU events</p>
+        <p align="center">Enjoy customizing KTU events</p>
     </div>
 <div class="align1">
     <table id="event" class ="table table-hover ">
@@ -47,13 +47,13 @@
 
 {% else %}
     <div class="eventTitleAlign">
-        <p>Hello <mark class="colorUser" >{{ user.username }}</mark> ADMIN! </p>
+        <p align="center">Hello <mark class="colorUser" >{{ user.username }}</mark> ADMIN! </p>
     </div>
     <div class="eventTitleAlign1">
-        <p>No events to customize yet!</p>
+        <p align="center">No events to customize yet!</p>
     </div>
     <div class="eventTitleAlign2">
-        <p>Please add new events at section Create_new!</p>
+        <p align="center">Please add new events at section Create_new!</p>
     </div>
 {% endif %}
 {% endblock %}
