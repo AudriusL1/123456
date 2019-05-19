@@ -23,15 +23,19 @@ class EventController extends AbstractController
       $events= $this->getDoctrine()->getRepository
       (Event::class)->findAll();
 
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
       $role = $this->get('security.token_storage')
       ->getToken()->getUser()->getRole();
       if($role == 1)
       {
         return $this->render('event/index.html.twig', array
-        ('events' => $events));
+        ('events' => $events, 'user' => $user));
+
       }
         return $this->render('event/indexuser.html.twig', array
-        ('events' => $events));
+        ('events' => $events,'user' => $user));
+
     }
 
 
@@ -148,5 +152,6 @@ class EventController extends AbstractController
        $response = new Response();
        $response->send();
      }
+
 
 }

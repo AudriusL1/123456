@@ -20,6 +20,19 @@ body{
     width: 900px;
     background: white;
 }
+.align1{
+    position: absolute;
+    display: block;
+    flex-direction:column ;
+    justify-content: center;
+    align-content: center;
+    margin-top: 70px;
+    margin-left: 300px;
+    margin-right: 300px;
+    height: 200px;
+    width: 900px;
+    background: white;
+}
 .alignProfile{
     position: absolute;
     left:100px;
@@ -43,6 +56,26 @@ a:hover{
     margin-left: 525px;
     font-size: 16px;
 }
+.eventTitleAlign{
+    margin-top: 0px;
+    margin-left: 550px;
+    font-size: 26px;
+}
+.eventTitleAlign1{
+    margin-left: 580px;
+    font-size: 18px;
+}
+.eventTitleAlign2{
+    margin-left: 520px;
+    font-size: 18px;
+    margin-top: -15px;
+}
+.colorUser{
+    color: #204d74;
+    background: none;
+    font-weight: bolder;
+}
+
 a.createNewCategory:visited{
 color: #4da6ff;
 }

@@ -5,14 +5,24 @@
 {% block titleBar %}{% endblock %}
 {% block body %}
 {% if events %}
-    <table id="event" class ="table table-striped">
-        <thead>
+<link rel="stylesheet" href="{{ asset('front-end/css/index.css') }}">
+    <div class="eventTitleAlign">
+        <p>Hello <mark class="colorUser" >{{ user.username }}</mark> ADMIN! </p>
+    </div>
+    <div class="eventTitleAlign1">
+        <p>Enjoy customizing KTU events</p>
+    </div>
+<div class="align1">
+    <table id="event" class ="table table-hover ">
+        <thead class="thead-dark">
         <tr>
             <th>Event Title</th>
             <th>Event Category</th>
             <th>Event Date</th>
             <th>Event Price</th>
-            <th>Actions</th>
+            <th>Inspect</th>
+            <th>Customize</th>
+            <th>Remove</th>
         </tr>
         </thead>
         <tbody>
@@ -33,10 +43,18 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
 
 {% else %}
-
+    <div class="eventTitleAlign">
+        <p>Hello <mark class="colorUser" >{{ user.username }}</mark> ADMIN! </p>
+    </div>
+    <div class="eventTitleAlign1">
+        <p>No events to customize yet!</p>
+    </div>
+    <div class="eventTitleAlign2">
+        <p>Please add new events at section Create_new!</p>
+    </div>
 {% endif %}
 {% endblock %}
 {% block javascripts %}
