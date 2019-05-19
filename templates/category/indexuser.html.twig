@@ -17,7 +17,17 @@
           {% for category in categories %}
           <tr>
           <td>{{ category.name }}</td>
+          {% set subbed = 0 %}
+          {% for sub in category.sub %}
+          {% if sub == userid %}
+          {% set subbed = 1 %}
+          {% endif %}
+          {% endfor %}
+          {% if subbed == 1 %}
+          <td><a href="/categories/unsub/{{category.id}}" button class="btn">Unsubscribe</a></td>
+          {% else %}
           <td><a href="/categories/sub/{{category.id}}" button class="btn">Subscribe</a></td>
+          {% endif %}
           </tr>
           {% endfor %}
       </tbody>

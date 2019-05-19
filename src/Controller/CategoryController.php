@@ -24,15 +24,16 @@ class CategoryController extends AbstractController
       $categories= $this->getDoctrine()->getRepository
       (Category::class)->findAll();
 
-      $role = $this->get('security.token_storage')
-      ->getToken()->getUser()->getRole();
+      $user = $this->get('security.token_storage')->getToken()->getUser();
+
+      $role = $user->getRole();
       if($role == 1)
       {
         return $this->render('category/index.html.twig', array
         ('categories' => $categories));
       }
         return $this->render('category/indexuser.html.twig', array
-        ('categories' => $categories));
+        ('categories' => $categories, 'userid' => $user));
     }
 
     /**
@@ -87,7 +88,25 @@ class CategoryController extends AbstractController
           return $this->redirectToRoute('category');
         }
 
-        //return $this->render('/category/indexuser.html.twig');
+        /**
+         * @Route("/categories/unsub/{id}", name="unsubscribe")
+         * Method({"GET", "POST"})
+         */
+         public function unsubscribe($id) {
+           $sub = new category();
+           $sub = $this->getDoctrine()->getRepository
+           (category::class)->find($id);
+           $user = $this->get('security.token_storage')
+           ->getToken()->getUser();
+
+             $sub->removeSub($user);
+
+             $entityManager = $this->getDoctrine()->getManager();
+             $entityManager->persist($sub);
+             $entityManager->flush();
+
+             return $this->redirectToRoute('category');
+           }
 
      /**
       * @Route("/categories/edit/{id}", name="editcat")

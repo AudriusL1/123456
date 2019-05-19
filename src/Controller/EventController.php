@@ -15,28 +15,44 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 class EventController extends AbstractController
 {
-    /**
-     * @Route("/event", name="event")
-     */
-    public function index()
+
+  /**
+   * @Route("/event", name="event")
+   */
+  public function index()
+  {
+    $events = $this->getDoctrine()->getRepository
+    (Event::class)->findAll();
+
+    $user = $this->get('security.token_storage')->getToken()->getUser();
+
+    $role = $user->getRole();
+    if($role == 1)
     {
-      $events= $this->getDoctrine()->getRepository
-      (Event::class)->findAll();
-
-        $user = $this->get('security.token_storage')->getToken()->getUser();
-
-      $role = $this->get('security.token_storage')
-      ->getToken()->getUser()->getRole();
-      if($role == 1)
-      {
-        return $this->render('event/index.html.twig', array
-        ('events' => $events, 'user' => $user));
-
-      }
-        return $this->render('event/indexuser.html.twig', array
-        ('events' => $events,'user' => $user));
+      return $this->render('event/index.html.twig', array
+      ('events' => $events, 'user' => $user));
 
     }
+      return $this->render('event/indexuser.html.twig', array
+      ('events' => $events,'user' => $user));
+
+  }
+
+      /**
+      * @Route("/myevent", name="myevent")
+      */
+      public function myevent()
+      {
+        $events = $this->getDoctrine()->getRepository
+        (Event::class)->findAll();
+
+        $user = $this->get('security.token_storage')
+        ->getToken()->getUser();
+
+          return $this->render('event/mysubevents.html.twig', array
+          ('events' => $events, 'userid' => $user));
+      }
+
 
 
     /**

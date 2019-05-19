@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All events{% endblock %}
+{% block titleBar %}{% endblock %}
+{% block eventBlockTitleAdmin %}{% endblock %}
+{% block body %}
+
+{% if events %}
+    <table id="event" class ="table table-striped">
+    <thead>
+    <tr>
+      <th>Event Title</th>
+      <th>Event Category</th>
+      <th>Event Date</th>
+      <th>Event Price</th>
+      <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+          {% for event in events %}
+          {% for sub in event.category.sub %}
+          {% if sub == userid %}
+          <tr>
+          <td>{{ event.name }}</td>
+          <td>{{ event.category }}</td>
+          <td>{{ event.date|date('Y-m-d') }}</td>
+          {% if event.price == 0 %}
+          <td>Free!</td>
+          {% else %}
+            <td>{{ event.price }} €</td>
+          {% endif %}
+          <td><a href="/event/{{event.id}}" button class="btn">Show</a></td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+      </tbody>
+      </table>
+{% else %}
+    <p>No events</p>
+{% endif %}
+{% endblock %}
