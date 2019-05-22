@@ -60,6 +60,11 @@ class EventController extends AbstractController
      * Method({"GET", "POST"})
      */
      public function new(Request $request) {
+
+       $user = $this->get('security.token_storage')->getToken()->getUser();
+
+       $role = $user->getRole();
+       if($role == 1){
        $event = new event();
        $form = $this->createFormBuilder($event)
        ->add('name', TextType::class, array('attr' =>
@@ -95,7 +100,8 @@ class EventController extends AbstractController
        return $this->render('event/new.html.twig', array(
          'form' => $form->createView()
        ));
-
+     }
+        return $this->redirectToRoute('event');
      }
 
      /**
@@ -103,6 +109,10 @@ class EventController extends AbstractController
       * Method({"GET", "POST"})
       */
       public function edit(Request $request, $id) {
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $role = $user->getRole();
+        if($role == 1){
         $event = new event();
         $event= $this->getDoctrine()->getRepository
         (Event::class)->find($id);
@@ -138,7 +148,8 @@ class EventController extends AbstractController
         return $this->render('event/edit.html.twig', array(
           'form' => $form->createView()
         ));
-
+      }
+        return $this->redirectToRoute('event');
       }
 
      /**
@@ -158,6 +169,10 @@ class EventController extends AbstractController
       * @Method({"DELETE"})
       */
      public function delete(Request $request, $id){
+       $user = $this->get('security.token_storage')->getToken()->getUser();
+
+       $role = $user->getRole();
+       if($role == 1){
        $events= $this->getDoctrine()->getRepository
        (Event::class)->find($id);
 
@@ -167,6 +182,8 @@ class EventController extends AbstractController
 
        $response = new Response();
        $response->send();
+      }
+       return $this->redirectToRoute('event');
      }
 
 

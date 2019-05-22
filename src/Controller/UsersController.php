@@ -18,11 +18,18 @@ class UsersController extends AbstractController
      */
     public function index()
     {
+      $user = $this->get('security.token_storage')->getToken()->getUser();
+
+      $role = $user->getRole();
+      if($role == 1)
+      {
       $users= $this->getDoctrine()->getRepository
       (User::class)->findAll();
 
         return $this->render('users/index.html.twig', array
         ('users' => $users));
+      }
+         return $this->redirectToRoute('event');
     }
 
     /**
@@ -30,18 +37,29 @@ class UsersController extends AbstractController
      */
     public function show($id)
     {
+      $user = $this->get('security.token_storage')->getToken()->getUser();
+
+      $role = $user->getRole();
+      if($role == 1)
+      {
       $users= $this->getDoctrine()->getRepository
       (User::class)->find($id);
 
         return $this->render('users/show.html.twig', array
         ('users' => $users));
+      }
+         return $this->redirectToRoute('event');
     }
 
     /**
      * @Route("/users/rolechange/{id}", name="rolechange")
      */
      public function change($id) {
+       $user = $this->get('security.token_storage')->getToken()->getUser();
 
+       $role = $user->getRole();
+       if($role == 1)
+       {
        $user= $this->getDoctrine()->getRepository
        (User::class)->find($id);
        if($user->getRole() == 0){
@@ -57,12 +75,19 @@ class UsersController extends AbstractController
 
          return $this->redirectToRoute('users');
        }
+          return $this->redirectToRoute('event');
+       }
 
     /**
      * @Route("/users/delete/{id}", name="del")
      * @Method({"DELETE"})
      */
     public function delete(Request $request, $id){
+      $user = $this->get('security.token_storage')->getToken()->getUser();
+
+      $role = $user->getRole();
+      if($role == 1)
+      {
       $users= $this->getDoctrine()->getRepository
       (User::class)->find($id);
 
@@ -72,6 +97,8 @@ class UsersController extends AbstractController
 
       $response = new Response();
       $response->send();
+    }
+       return $this->redirectToRoute('event');
     }
 
     /**

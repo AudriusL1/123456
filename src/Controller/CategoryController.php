@@ -41,6 +41,11 @@ class CategoryController extends AbstractController
      * Method({"GET", "POST"})
      */
      public function new(Request $request) {
+
+       $user = $this->get('security.token_storage')->getToken()->getUser();
+
+       $role = $user->getRole();
+       if($role == 1){
        $category = new category();
        $form = $this->createFormBuilder($category)
        ->add('name', TextType::class, array('attr' =>
@@ -65,7 +70,8 @@ class CategoryController extends AbstractController
        return $this->render('/category/new.html.twig', array(
          'form' => $form->createView()
        ));
-
+      }
+      return $this->redirectToRoute('category');
      }
 
      /**
@@ -113,6 +119,11 @@ class CategoryController extends AbstractController
       * Method({"GET", "POST"})
       */
       public function edit(Request $request, $id) {
+
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $role = $user->getRole();
+        if($role == 1){
         $category = new category();
         $category = $this->getDoctrine()->getRepository
         (category::class)->find($id);
@@ -137,7 +148,8 @@ class CategoryController extends AbstractController
         return $this->render('/category/edit.html.twig', array(
           'form' => $form->createView()
         ));
-
+        }
+        return $this->redirectToRoute('category');
       }
 
       /**
@@ -145,6 +157,10 @@ class CategoryController extends AbstractController
        * @Method({"DELETE"})
        */
       public function delete(Request $request, $id){
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        $role = $user->getRole();
+        if($role == 1){
         $category= $this->getDoctrine()->getRepository
         (category::class)->find($id);
 
@@ -154,6 +170,8 @@ class CategoryController extends AbstractController
 
         $response = new Response();
         $response->send();
+      }
+        return $this->redirectToRoute('category');
       }
 
 
