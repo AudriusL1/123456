@@ -57,6 +57,10 @@ class UsersController extends AbstractController
      public function change($id) {
        $user = $this->get('security.token_storage')->getToken()->getUser();
 
+       if($user->getId() == $id){
+       return $this->redirectToRoute('users');
+       }
+
        $role = $user->getRole();
        if($role == 1)
        {
@@ -84,6 +88,10 @@ class UsersController extends AbstractController
      */
     public function delete(Request $request, $id){
       $user = $this->get('security.token_storage')->getToken()->getUser();
+
+      if($user->getId() == $id){
+      return $this->redirectToRoute('users');
+      }
 
       $role = $user->getRole();
       if($role == 1)
